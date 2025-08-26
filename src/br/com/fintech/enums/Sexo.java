@@ -4,8 +4,7 @@ import br.com.fintech.enums.Descritivel;
 
 public enum Sexo implements Descritivel {
     MASCULINO("Masculino"),
-    FEMININO("Feminino"),
-    OUTRO("Outro");
+    FEMININO("Feminino");
 
     private final String descricao;
 

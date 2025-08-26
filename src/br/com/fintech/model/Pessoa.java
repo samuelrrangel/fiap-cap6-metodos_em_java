@@ -8,7 +8,6 @@ import br.com.fintech.enums.Sexo;
 public class Pessoa {
 
     private String nome;
-    private String email;
     private String cpf;
     private LocalDate dataNascimento;
     private Sexo sexo;
@@ -36,7 +35,6 @@ public class Pessoa {
         System.out.println("=== Dados da Pessoa ===");
         System.out.println("Nome: " + nome);
         System.out.println("CPF: " + getCpfFormatado());
-        System.out.println("Email: " + email);
         System.out.println("Sexo: " + sexo.getDescricao());
         if (dataNascimento != null) {
             System.out.println("Data de Nascimento: " + dataNascimento.format(formatter));
@@ -44,16 +42,14 @@ public class Pessoa {
         }
     }
 
-    public Pessoa(String nome, String email, String cpf, LocalDate dataNascimento, Sexo sexo) {
+    public Pessoa(String nome, String cpf, LocalDate dataNascimento, Sexo sexo) {
         this.nome = nome;
-        this.email = email;
         this.cpf = cpf;
         this.dataNascimento = dataNascimento;
         this.sexo = sexo;
     }
 
     public String getNome() { return nome; }
-    public String getEmail() { return email; }
     public String getCpf() { return cpf; }
     public LocalDate getDataNascimento() { return dataNascimento; }
     public Sexo getSexo() { return sexo; }

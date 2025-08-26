@@ -38,10 +38,6 @@ public class Conta implements Movimentavel {
         titular.visualizarPerfil();
     }
 
-    public double getSaldo() {
-        return saldo;
-    }
-
     @Override
     public void depositar(double valor) {
         saldo += valor;
@@ -62,15 +58,15 @@ public class Conta implements Movimentavel {
         }
     }
 
+    public String getNumeroConta() { return numeroConta; }
+    public Usuario getTitular() { return titular; }
+    public TipoConta getTipo() { return tipo; }
+    public double getSaldo() { return saldo; }
+    public LocalDateTime getDataCriacao() { return dataCriacao; }
     public void exibirHistorico() {
-        System.out.println("=== Histórico de Transações ===");
+        System.out.println("=== Extrato da Conta ( " + numeroConta + " ) ===");
         for (Transacao t : historico) {
             t.exibirTransacao();
         }
     }
-
-    public String getNumeroConta() { return numeroConta; }
-    public Usuario getTitular() { return titular; }
-    public TipoConta getTipo() { return tipo; }
-    public LocalDateTime getDataCriacao() { return dataCriacao; }
- }
+}

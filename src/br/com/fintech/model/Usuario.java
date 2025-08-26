@@ -24,23 +24,26 @@ public class Usuario {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
         System.out.println("=== Perfil do Usuário ===");
-        System.out.println("Nome: " + pessoa.getNome());
-        System.out.println("CPF: " + pessoa.getCpfFormatado());
+        System.out.println("Nome de usuário: " + username);
         System.out.println("Email: " + email);
         System.out.println("Data de Criação: " + dataCriacao.format(formatter));
-        System.out.println("=== Dados da Pessoa ===");
+        System.out.println("=== Dados do Proprietário ===");
         pessoa.exibirDados();
     }
 
-    public Pessoa getPessoa() {
-        return pessoa;
-    }
-
-    public Usuario(Pessoa pessoa, String username, String senha) {
+    public Usuario(Pessoa pessoa, String username, String email, String senha) {
         this.pessoa = pessoa;
         this.username = username;
+        this.email = email;
         this.senha = senha;
         this.dataCriacao = LocalDateTime.now();
         this.ativo = true;
     }
+
+    public Pessoa getPessoa() { return pessoa; }
+    public String getUsername() { return username; }
+    public String getEmail() { return email; }
+    public LocalDateTime getDataCriacao() { return dataCriacao; }
+    public LocalDateTime getDataAtualizacao() { return dataAtualizacao; }
+    public boolean isAtivo() { return ativo; }
 }
